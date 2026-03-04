@@ -79,11 +79,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.getElementById('mobile-menu-toggle');
     const mobileMenuClose = document.getElementById('mobile-menu-close');
     const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
     const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
     if (mobileMenuBtn && mobileMenu) {
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.remove('translate-x-full');
+            if (mobileMenuBackdrop) {
+                mobileMenuBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+                mobileMenuBackdrop.classList.add('opacity-100', 'pointer-events-auto');
+            }
             document.body.style.overflow = 'hidden'; // Prevent scroll
         });
     }
@@ -91,12 +96,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeMenu = () => {
         if (mobileMenu) {
             mobileMenu.classList.add('translate-x-full');
+            if (mobileMenuBackdrop) {
+                mobileMenuBackdrop.classList.remove('opacity-100', 'pointer-events-auto');
+                mobileMenuBackdrop.classList.add('opacity-0', 'pointer-events-none');
+            }
             document.body.style.overflow = ''; // Restore scroll
         }
     };
 
     if (mobileMenuClose) {
         mobileMenuClose.addEventListener('click', closeMenu);
+    }
+
+    if (mobileMenuBackdrop) {
+        mobileMenuBackdrop.addEventListener('click', closeMenu);
     }
 
     mobileLinks.forEach(link => {

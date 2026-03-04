@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" class="overflow-x-hidden">
 
 <head>
     <meta charset="utf-8" />
@@ -39,8 +39,8 @@
 </head>
 
 <body
-    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display selection:bg-primary selection:text-white">
-    <div class="relative flex min-h-screen w-full flex-col">
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display selection:bg-primary selection:text-white overflow-x-hidden w-full max-w-[100vw]">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
         <header id="main-nav"
             class="sticky top-0 z-50 flex items-center justify-between border-b border-white/10 bg-white/70 dark:bg-background-dark/80 backdrop-blur-xl px-3 sm:px-6 lg:px-20 py-3 transition-all duration-500">
             <div class="flex items-center gap-2 lg:gap-12 min-w-0">
@@ -84,9 +84,9 @@
             </div>
             <div class="flex-shrink-0 flex items-center gap-1 sm:gap-3 lg:gap-8">
                 <button
-                    class="md:hidden flex items-center text-slate-900 dark:text-white bg-slate-100 dark:bg-slate-800 p-1.5 rounded-xl border border-slate-200 dark:border-slate-700"
-                    id="mobile-menu-toggle">
-                    <span class="material-symbols-outlined text-3xl">menu</span>
+                    class="md:hidden flex items-center justify-center size-10 text-slate-900 dark:text-white hover:text-primary transition-colors focus:outline-none"
+                    id="mobile-menu-toggle" aria-label="Menu">
+                    <span class="material-symbols-outlined text-[32px]">menu</span>
                 </button>
                 <a href="#contact"
                     class="hidden md:flex relative group min-w-[140px] lg:min-w-[160px] cursor-pointer items-center justify-center rounded-2xl h-10 lg:h-12 px-6 lg:px-8 bg-slate-900 dark:bg-primary text-white text-[10px] lg:text-xs font-black uppercase tracking-widest shadow-2xl hover:bg-primary dark:hover:bg-primary-dark transition-all duration-500 overflow-hidden">
@@ -100,59 +100,68 @@
                     </span>
                 </a>
             </div>
-            <!-- Mobile Menu Sidebar (Hidden by default) -->
+            <!-- Mobile Menu Backdrop -->
+            <div id="mobile-menu-backdrop"
+                class="fixed inset-0 z-[60] bg-slate-900/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-500 md:hidden">
+            </div>
+
+            <!-- Mobile Menu Sidebar -->
             <div id="mobile-menu"
-                class="fixed inset-0 z-[70] bg-slate-950 translate-x-full transition-transform duration-500 md:hidden flex flex-col">
+                class="fixed top-0 right-0 bottom-0 w-[85%] max-w-sm z-[70] bg-white dark:bg-slate-950 border-l border-slate-200 dark:border-white/10 translate-x-full transition-transform duration-500 md:hidden flex flex-col shadow-2xl">
 
                 <!-- Navbar Inside Menu -->
-                <div class="flex items-center justify-between p-5 border-b border-white/10">
+                <div
+                    class="flex items-center justify-between p-5 border-b border-slate-100 dark:border-white/10 bg-slate-50/50 dark:bg-slate-900/50">
                     <div class="flex items-center gap-3">
-                        <div class="bg-slate-800 p-1.5 rounded-xl border border-slate-700">
+                        <div
+                            class="bg-white dark:bg-slate-800 p-1.5 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
                             <img src="image.jpg" alt="Logo" class="h-6 w-auto object-contain" />
                         </div>
-                        <span class="text-white font-brand font-black text-lg tracking-tight">AlphaMega<span
+                        <span
+                            class="text-slate-900 dark:text-white font-brand font-black text-lg tracking-tight">AlphaMega<span
                                 class="text-primary">Plast</span></span>
                     </div>
                     <button id="mobile-menu-close"
-                        class="text-slate-400 hover:text-white transition-colors bg-white/5 p-2 rounded-full border border-white/10 focus:outline-none">
+                        class="text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors bg-white dark:bg-white/5 p-2 rounded-full border border-slate-200 dark:border-white/10 shadow-sm focus:outline-none">
                         <span class="material-symbols-outlined text-xl">close</span>
                     </button>
                 </div>
 
                 <!-- Main Links -->
                 <nav class="flex-1 overflow-y-auto py-8 px-6 flex flex-col gap-6">
-                    <a class="mobile-nav-link group flex items-center justify-between text-2xl font-brand font-black text-slate-300 hover:text-white transition-colors border-b border-white/5 pb-6"
+                    <a class="mobile-nav-link group flex items-center justify-between text-2xl font-brand font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors border-b border-slate-100 dark:border-white/5 pb-6"
                         href="#">
                         <span>Accueil</span>
                         <span
-                            class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all">arrow_forward</span>
+                            class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all">trending_flat</span>
                     </a>
-                    <a class="mobile-nav-link group flex items-center justify-between text-2xl font-brand font-black text-slate-300 hover:text-white transition-colors border-b border-white/5 pb-6"
+                    <a class="mobile-nav-link group flex items-center justify-between text-2xl font-brand font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors border-b border-slate-100 dark:border-white/5 pb-6"
                         href="#produits">
                         <span>Nos Produits</span>
                         <span
-                            class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all">arrow_forward</span>
+                            class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all">trending_flat</span>
                     </a>
-                    <a class="mobile-nav-link group flex items-center justify-between text-2xl font-brand font-black text-slate-300 hover:text-white transition-colors border-b border-white/5 pb-6"
+                    <a class="mobile-nav-link group flex items-center justify-between text-2xl font-brand font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors border-b border-slate-100 dark:border-white/5 pb-6"
                         href="#services">
                         <span>Nos Atouts</span>
                         <span
-                            class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all">arrow_forward</span>
+                            class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all">trending_flat</span>
                     </a>
-                    <a class="mobile-nav-link group flex items-center justify-between text-2xl font-brand font-black text-slate-300 hover:text-white transition-colors pb-2"
+                    <a class="mobile-nav-link group flex items-center justify-between text-2xl font-brand font-bold text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors pb-2"
                         href="#contact">
                         <span>Contact</span>
                         <span
-                            class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all">arrow_forward</span>
+                            class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all">trending_flat</span>
                     </a>
                 </nav>
 
                 <!-- Footer CTA Inside Menu -->
-                <div class="p-6 border-t border-white/10 bg-slate-900/50 mt-auto">
+                <div
+                    class="p-6 border-t border-slate-100 dark:border-white/10 bg-slate-50 dark:bg-slate-900/50 mt-auto">
                     <div class="flex flex-col gap-4">
                         <a href="#contact"
-                            class="mobile-nav-link w-full bg-primary hover:bg-emerald-600 text-white py-4 rounded-2xl font-black text-[11px] uppercase tracking-[0.2em] shadow-lg flex items-center justify-center gap-2 transition-all active:scale-95">
-                            Demander un devis
+                            class="mobile-nav-link w-full bg-slate-900 dark:bg-primary hover:bg-slate-800 dark:hover:bg-emerald-600 text-white py-4 rounded-xl font-black text-xs uppercase tracking-[0.2em] shadow-2xl flex items-center justify-center gap-2 transition-all active:scale-95">
+                            Obtenir un devis
                             <span class="material-symbols-outlined text-sm">arrow_forward</span>
                         </a>
                         <div class="flex items-center justify-center gap-2 mt-2">
