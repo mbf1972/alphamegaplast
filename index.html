@@ -42,29 +42,29 @@
     class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display selection:bg-primary selection:text-white">
     <div class="relative flex min-h-screen w-full flex-col">
         <header id="main-nav"
-            class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-white/10 bg-white/70 dark:bg-background-dark/80 backdrop-blur-xl px-6 lg:px-20 py-3 transition-all duration-500">
-            <div class="flex items-center gap-12">
-                <a href="#" class="group flex items-center gap-4 py-1">
+            class="sticky top-0 z-50 flex items-center justify-between border-b border-white/10 bg-white/70 dark:bg-background-dark/80 backdrop-blur-xl px-4 lg:px-20 py-3 transition-all duration-500">
+            <div class="flex items-center gap-4 lg:gap-12">
+                <a href="#" class="group flex items-center gap-3 lg:gap-4 py-1">
                     <div class="relative flex items-center justify-center">
                         <div
                             class="absolute inset-0 bg-primary/30 blur-2xl rounded-full scale-0 group-hover:scale-150 transition-transform duration-700 opacity-0 group-hover:opacity-100">
                         </div>
                         <div
-                            class="relative bg-white dark:bg-slate-800 p-2 rounded-2xl shadow-xl border border-slate-200/50 dark:border-slate-700/50 group-hover:border-primary/50 transition-all duration-500 scale-100 group-hover:scale-105 group-hover:-rotate-3">
+                            class="relative bg-white dark:bg-slate-800 p-1.5 lg:p-2 rounded-xl lg:2xl shadow-xl border border-slate-200/50 dark:border-slate-700/50 group-hover:border-primary/50 transition-all duration-500 scale-100 group-hover:scale-105 group-hover:-rotate-3">
                             <img src="image.jpg" alt="AlphaMegaPlast Logo"
-                                class="h-10 w-auto object-contain brand-glow transition-transform duration-500" />
+                                class="h-8 lg:h-10 w-auto object-contain brand-glow transition-transform duration-500" />
                         </div>
                     </div>
                     <div class="flex flex-col">
                         <h2
-                            class="text-slate-900 dark:text-white text-2xl font-brand font-extrabold leading-none tracking-tight transition-all duration-300">
+                            class="text-slate-900 dark:text-white text-lg lg:text-2xl font-brand font-extrabold leading-none tracking-tight transition-all duration-300">
                             AlphaMega<span
                                 class="text-primary group-hover:text-emerald-400 group-hover:tracking-wider transition-all duration-500">Plast</span>
                         </h2>
-                        <div class="flex items-center gap-2 mt-1.5 overflow-hidden font-ui">
+                        <div class="flex items-center gap-2 mt-1 lg:mt-1.5 overflow-hidden font-ui">
                             <div class="h-[1px] w-0 bg-primary group-hover:w-4 transition-all duration-500"></div>
                             <span
-                                class="text-[9px] font-black text-slate-500 dark:text-slate-400 tracking-[0.3em] uppercase opacity-60 group-hover:opacity-100 group-hover:text-primary transition-all duration-500">Excellence
+                                class="text-[7px] lg:text-[9px] font-black text-slate-500 dark:text-slate-400 tracking-[0.3em] uppercase opacity-60 group-hover:opacity-100 group-hover:text-primary transition-all duration-500">Excellence
                                 Industrielle</span>
                         </div>
                     </div>
@@ -80,22 +80,42 @@
                         href="#contact">Contact</a>
                 </nav>
             </div>
-            <div class="flex items-center gap-8">
-                <button
-                    class="hidden sm:flex items-center text-slate-500 dark:text-slate-400 hover:text-primary hover:scale-125 transition-all duration-300">
-                    <span class="material-symbols-outlined text-[22px]">search</span>
+            <div class="flex items-center gap-3 lg:gap-8">
+                <button class="md:hidden flex items-center text-slate-900 dark:text-white" id="mobile-menu-toggle">
+                    <span class="material-symbols-outlined text-[32px]">menu</span>
                 </button>
                 <a href="#contact"
-                    class="relative group flex min-w-[160px] cursor-pointer items-center justify-center rounded-2xl h-12 px-8 bg-slate-900 dark:bg-primary text-white text-xs font-black uppercase tracking-widest shadow-2xl hover:bg-primary dark:hover:bg-primary-dark transition-all duration-500 overflow-hidden">
+                    class="hidden sm:flex relative group min-w-[140px] lg:min-w-[160px] cursor-pointer items-center justify-center rounded-2xl h-10 lg:h-12 px-6 lg:px-8 bg-slate-900 dark:bg-primary text-white text-[10px] lg:text-xs font-black uppercase tracking-widest shadow-2xl hover:bg-primary dark:hover:bg-primary-dark transition-all duration-500 overflow-hidden">
                     <div
                         class="absolute inset-x-0 bottom-0 h-1 bg-white/20 scale-x-0 group-hover:scale-x-100 transition-transform duration-500">
                     </div>
                     <span class="relative z-10 flex items-center gap-2">
-                        Nous contacter
+                        Contact
                         <span
                             class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
                     </span>
                 </a>
+            </div>
+            <!-- Mobile Menu Sidebar (Hidden by default) -->
+            <div id="mobile-menu"
+                class="fixed inset-0 z-[60] bg-slate-950/95 backdrop-blur-xl translate-x-full transition-transform duration-500 md:hidden">
+                <div class="flex flex-col h-full p-10">
+                    <div class="flex justify-end mb-20">
+                        <button id="mobile-menu-close" class="text-white">
+                            <span class="material-symbols-outlined text-[40px]">close</span>
+                        </button>
+                    </div>
+                    <nav class="flex flex-col gap-10">
+                        <a class="mobile-nav-link text-4xl font-brand font-black text-white hover:text-primary transition-colors"
+                            href="#">Accueil</a>
+                        <a class="mobile-nav-link text-4xl font-brand font-black text-white hover:text-primary transition-colors"
+                            href="#produits">Produits</a>
+                        <a class="mobile-nav-link text-4xl font-brand font-black text-white hover:text-primary transition-colors"
+                            href="#services">Services</a>
+                        <a class="mobile-nav-link text-4xl font-brand font-black text-white hover:text-primary transition-colors"
+                            href="#contact">Contact</a>
+                    </nav>
+                </div>
             </div>
         </header>
         <main class="flex-1 flex flex-col">
@@ -126,7 +146,7 @@
                         </div>
 
                         <h1
-                            class="text-white text-5xl lg:text-8xl font-brand font-extrabold leading-[0.95] tracking-tight mb-8">
+                            class="text-white text-4xl md:text-5xl lg:text-8xl font-brand font-extrabold leading-[0.95] tracking-tight mb-8">
                             L'Expertise du <br />
                             <span
                                 class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-primary">Plastique
@@ -203,7 +223,7 @@
                             <span class="text-[10px] font-black uppercase tracking-[0.3em] font-ui">Notre Gamme</span>
                         </div>
                         <h2
-                            class="text-slate-950 dark:text-white text-4xl lg:text-6xl font-brand font-black leading-none mb-6">
+                            class="text-slate-950 dark:text-white text-3xl md:text-4xl lg:text-6xl font-brand font-black leading-none mb-6">
                             Solutions de <br /><span class="text-primary italic">Haute Précision</span>
                         </h2>
                         <p class="text-slate-500 dark:text-slate-400 text-lg font-ui">
@@ -437,7 +457,7 @@
                             <span class="text-[10px] font-black uppercase tracking-[0.3em] font-ui">Nos Atouts</span>
                             <div class="h-[1px] w-8 bg-primary"></div>
                         </div>
-                        <h2 class="text-white text-4xl lg:text-7xl font-brand font-black leading-none mb-8">
+                        <h2 class="text-white text-3xl md:text-4xl lg:text-7xl font-brand font-black leading-none mb-8">
                             Pourquoi Nous Faire <br /><span class="text-emerald-400 italic">Confiance</span> ?
                         </h2>
                     </div>
@@ -504,7 +524,7 @@
                 </div>
 
                 <div class="relative z-10 max-w-5xl mx-auto text-center fade-up">
-                    <h2 class="text-white text-5xl lg:text-8xl font-brand font-black mb-10 leading-none">
+                    <h2 class="text-white text-4xl md:text-5xl lg:text-8xl font-brand font-black mb-10 leading-none">
                         Bâtissons Votre <br />Futur Industriel
                     </h2>
                     <p

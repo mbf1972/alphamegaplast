@@ -3,7 +3,19 @@
     Design for Browser-Direct Use (Compatible with Tailwind CDN)
 */
 
-/* Base Styles */
+/* Typography Overrides for Responsiveness */
+h1 {
+    font-size: clamp(2.25rem, 8vw, 5rem);
+}
+
+h2 {
+    font-size: clamp(1.8rem, 6vw, 3.75rem);
+}
+
+h3 {
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+}
+
 body {
     font-family: 'Manrope', sans-serif;
     -webkit-font-smoothing: antialiased;

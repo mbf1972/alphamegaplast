@@ -75,7 +75,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // 5. Button & Card Logic
+    // 5. Mobile Menu Toggle Logic
+    const mobileMenuBtn = document.getElementById('mobile-menu-toggle');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden'; // Prevent scroll
+        });
+    }
+
+    const closeMenu = () => {
+        if (mobileMenu) {
+            mobileMenu.classList.add('translate-x-full');
+            document.body.style.overflow = ''; // Restore scroll
+        }
+    };
+
+    if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', closeMenu);
+    }
+
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // 6. Button & Card Logic
     const interactables = document.querySelectorAll('button, a, .group');
-    // Add custom feedback or subtle sounds if needed (optional)
 });
